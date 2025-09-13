@@ -1,0 +1,7 @@
+services:
+  cdnav:
+    image: clamav/clamav:stable
+    ports:
+      - 13310:3310
+      - 17357:7357
+    
