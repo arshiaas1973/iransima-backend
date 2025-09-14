@@ -1,1 +1,6 @@
-cdn.env
+psql.env
+.env.development
+.env.production
+pgdata
+pgcert
+certs
