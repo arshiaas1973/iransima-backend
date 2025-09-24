@@ -4,13 +4,13 @@ import (
 	"net/http"
 
 	"github.com/arshiaas1973/iransima-backend/middleware"
-	"github.com/arshiaas1973/iransima-backend/orm"
+	orm "github.com/arshiaas1973/iransima-backend/orm/models"
 	"github.com/gofiber/fiber/v3"
 )
 
 func Init(engine *fiber.App) {
 	v1 := engine.Group("/api/v1", middleware.API)
-	v1.Get("/users", middleware.Member, GetUser)
+	v1.Get("/users", GetUser)
 }
 
 func GetUser(c fiber.Ctx) error {

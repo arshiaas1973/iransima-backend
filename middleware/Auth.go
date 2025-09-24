@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/arshiaas1973/iransima-backend/orm"
+	orm "github.com/arshiaas1973/iransima-backend/orm/models"
 	"github.com/gbrlsnchs/jwt/v3"
 	"github.com/gofiber/fiber/v3"
 	"gorm.io/driver/postgres"

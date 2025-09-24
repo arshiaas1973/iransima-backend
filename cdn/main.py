@@ -41,9 +41,12 @@ app.add_middleware(
 
 @app.middleware("http")
 async def authorization(request: Request, call_next):
+  print(request.url.path)
+  if request.url.path.startswith("/files"):
+    return await call_next(request)
   if request.headers.get("X-Token") == None or request.headers.get("X-Token") == os.getenv("API_KEY"):
     return JSONResponse({"status":"failed","result":"errors.unAuthorized"},status.HTTP_401_UNAUTHORIZED)
-  return call_next(request)
+  return await call_next(request)
 
 app.mount("/files",StaticFiles(directory="files"),name="files")
 
