@@ -1,4 +1,6 @@
 psql.env
+se.env
+meili_data
 .env.development
 .env.production
 pgdata
